@@ -148,7 +148,7 @@ var minimize = document.getElementsByClassName('fwclosebtn')[1];
 
 async function openfwgfsmodal() {
 	modal.style.display = 'block';
-	chmdl('https://gitcdn.link/cdn/pickle69420/fwgfs-box/main/allgames.html','FREE WEB GAMES FOR SCHOOL');
+	chmdl('https://raw.githubusercontent.com/pickle69420/fwgfs-box/main/allgames.html','FREE WEB GAMES FOR SCHOOL');
 }
 
 close.onclick = function() {
