@@ -1,3 +1,25 @@
+<script>function getgame(gname, glink) {
+	var modalcontent = document.getElementsByClassName('fwimportcontent')[0];
+	var modaldivcontent = document.getElementsByClassName('fwmodal-content')[0];
+	var modaltitle = document.getElementsByClassName('fwmodal-title')[0];
+	while(modalcontent.firstChild) {
+        modalcontent.removeChild(modalcontent.firstChild);
+    };
+	let framewidth = (window.innerWidth/100)*93;
+	let frameheight = window.innerHeight-80;
+	var fwiframe = document.createElement('iframe');
+	modaltitle.remove();
+	modalcontent.style.height = '100%';
+	fwiframe.width = framewidth;
+	fwiframe.height = frameheight;
+	fwiframe.id = 'gameframe';
+	fwiframe.frameBorder = 0;
+	fwiframe.src = glink;
+	fwiframe.title = gname;
+	modaldivcontent.style.height = '99%';
+	modaldivcontent.style.width = '99%';
+	modalcontent.appendChild(fwiframe);
+}</script>
 <p>Hi! My name is <b>[REDACTED]</b> and this is my collection of unblocked web games. <br>I have found a brilliant way to unblock games, but it is incredibly hard to unblock said games, <br>so I have prepared this site for people who want to play video games in school.</p>
 <p>We currently have 155 games!</p>
 <button onclick="getgame('Flappy Bird','https://gitcdn.link/cdn/channingbreeze/games/master/flappybird/index.html')" >Flappy Bird</button>
