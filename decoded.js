@@ -1,8 +1,7 @@
-(async function() {
 var ce = function(e) {return document.createElement(e);};
-async function mkmdl() {
+function mkmdl() {
 	var modalbox = ce('div');
-	modalbox.id = 'fwgfsmdl'
+	modalbox.id = 'fwgfsmdl';
 	modalbox.innerHTML = `
 	<div class='fwmodal-content'>
 	<div class='fwmodal-header'>
@@ -134,7 +133,7 @@ async function mkmdl() {
 	`;
 	document.head.appendChild(headerstyles);
 }
-async function mdlcxs() {
+function mdlcxs() {
 	if (document.getElementById('fwgfsmdl') !== undefined) {
 		return true;
 	} else {return false;}
@@ -146,23 +145,18 @@ var modal = document.getElementById('fwgfsmdl');
 var close = document.getElementsByClassName('fwclosebtn')[0];
 var minimize = document.getElementsByClassName('fwclosebtn')[1];
 
-async function openfwgfsmodal() {
+function openfwgfsmodal() {
 	modal.style.display = 'block';
 	chmdl('https://raw.githubusercontent.com/pickle69420/fwgfs-box/main/allgames.html','FREE WEB GAMES FOR SCHOOL');
 }
-
 close.onclick = function() {
-	modal.style.display = 'none';
-	var modalcontent = document.getElementsByClassName('fwimportcontent')[0];
-	while(modalcontent.firstChild) {
-        modalcontent.removeChild(modalcontent.firstChild);
-    };
-}
+	document.getElementById('fwgfsmdl').remove();
+};
 minimize.onclick = function() {
 	modal.style.display = 'none';
 	fwmmdl();
-}
-async function chmdl(url, title) {
+};
+function chmdl(url, title) {
 	var modaltitle = document.getElementsByClassName('fwmodal-title')[0];
 	var modalcontent = document.getElementsByClassName('fwimportcontent')[0];
 	fetch(url)
@@ -172,38 +166,38 @@ async function chmdl(url, title) {
 		modaltitle.innerHTML = title;
 	});
 }
-async function getgame(gname, glink) {
+function fwmmdl() {
+	var box = ce('button');
+	box.innerHTML = `+`;
+	box.style = 'border: none!important;padding: 12px 16px;position: fixed;right:0;bottom:0;background-color: rgba(0, 0, 0, 0);';
+	var modal = document.getElementById('fwgfsmdl');
+	box.onclick = function() {
+		modal.style.display = 'block';
+		this.remove();
+	};
+	document.body.appendChild(box);
+}
+openfwgfsmodal();
+function getgame(gname, glink) {
 	var modalcontent = document.getElementsByClassName('fwimportcontent')[0];
 	var modaldivcontent = document.getElementsByClassName('fwmodal-content')[0];
 	var modaltitle = document.getElementsByClassName('fwmodal-title')[0];
 	while(modalcontent.firstChild) {
         modalcontent.removeChild(modalcontent.firstChild);
-    };
+    }
 	let framewidth = (window.innerWidth/100)*93;
 	let frameheight = window.innerHeight-80;
 	var fwiframe = document.createElement('iframe');
 	modaltitle.remove();
 	modalcontent.style.height = '100%';
+	modalcontent.style.width = '100%';
 	fwiframe.width = framewidth;
 	fwiframe.height = frameheight;
 	fwiframe.id = 'gameframe';
 	fwiframe.frameBorder = 0;
 	fwiframe.src = glink;
 	fwiframe.title = gname;
-	modaldivcontent.style.height = '99%';
-	modaldivcontent.style.width = '99%';
+	modaldivcontent.style.height = '99.99%';
+	modaldivcontent.style.width = '100%';
 	modalcontent.appendChild(fwiframe);
 }
-async function fwmmdl() {
-	var box = ce('button');
-	box.innerHTML = `+`;
-	box.style = 'border: none!important;padding: 12px 16px;position: absolute;right:0;bottom:0;background-color: rgba(0, 0, 0, 0);'
-	var modal = document.getElementById('fwgfsmdl');
-	box.onclick = function() {
-		modal.style.display = 'block';
-		this.remove();
-	}
-	document.body.appendChild(box);
-}
-openfwgfsmodal();
-})();
