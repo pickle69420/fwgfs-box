@@ -85,6 +85,7 @@ function mkmdl() {
 	.fwmodal-title {
 		color: #EDF5E1;
 		text-align: center;
+		font-size: 24px;
 	}
 
 	.fwimportcontent {
@@ -95,7 +96,8 @@ function mkmdl() {
 	}
 
 	.fwimportcontent p {
-		margin-left: 20px
+		margin-left: 20px;
+		font-size: 16px;
 	}
 
 	.fwimportcontent button {
@@ -169,7 +171,7 @@ function chmdl(url, title) {
 function fwmmdl() {
 	var box = ce('button');
 	box.innerHTML = `+`;
-	box.style = 'border: none!important;padding: 12px 16px;position: fixed;right:0;bottom:0;background-color: rgba(0, 0, 0, 0);';
+	box.style = 'border: none!important;padding: 12px 16px;position: fixed;right:0;bottom:0;background-color: rgba(0, 0, 0, 0);z-index: 9999;';
 	var modal = document.getElementById('fwgfsmdl');
 	box.onclick = function() {
 		modal.style.display = 'block';
