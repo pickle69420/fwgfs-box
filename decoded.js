@@ -199,7 +199,7 @@ function getgame(gname, glink) {
 	fwiframe.frameBorder = 0;
 	fwiframe.src = glink;
 	fwiframe.title = gname;
-	modaldivcontent.style.height = '99.99%';
+	modaldivcontent.style.height = '99.95%';
 	modaldivcontent.style.width = '100%';
 	modalcontent.appendChild(fwiframe);
 }
