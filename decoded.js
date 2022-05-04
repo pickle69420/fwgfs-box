@@ -6,14 +6,14 @@ async function mkmdl() {
 	.then((response) => response.text())
 	.then((data) => {
 		modalbox.innerHTML = data;
-	})
+	});
 	document.body.appendChild(modalbox);
 	var headerstyles = ce('style');
 	await fetch('https://raw.githubusercontent.com/pickle69420/fwgfs-box/main/fwmain.css')
 	.then((response) => response.text())
 	.then((data) => {
 		headerstyles.innerHTML = data;
-	})
+	});
 	document.head.appendChild(headerstyles);
 		document.getElementsByClassName("fwclosebtn")[0].onclick = function() {
 	document.getElementById('fwgfsmdl').remove();
@@ -30,12 +30,6 @@ function mdlcxs() {
 	if (document.getElementById('fwgfsmdl') !== undefined) {
 		return true;
 	} else {return false;}
-}
-
-function openfwgfsmodal() {
-	var modal = document.getElementById('fwgfsmdl');
-	modal.style.display = 'block';
-	chmdl('https://raw.githubusercontent.com/pickle69420/fwgfs-box/main/allgames.html','FREE WEB GAMES FOR SCHOOL');
 }
 function chmdl(url, title) {
 	var modaltitle = document.getElementsByClassName('fwmodal-title')[0];
